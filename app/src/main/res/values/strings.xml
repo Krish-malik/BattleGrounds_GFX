@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BattleGrounds-GFX</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- res/values/strings.xml -->
+    <string name="launch_overlay">Start FPS Meter</string>
+    <string name="stop_overlay">Stop FPS Meter</string>
+    <string name="pubg_taiwan">PUBG Taiwan</string>
+    <string name="pubg_korea">PUBG Korea</string>
+
+</resources>

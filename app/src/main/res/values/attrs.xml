@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="SwipeButton">
+        <attr name="borderRadius" format="dimension"/>
+        <attr name="textColor" format="color"/>
+        <attr name="outerColor" format="color"/>
+        <attr name="sliderColor" format="color"/>
+    </declare-styleable>
+</resources>

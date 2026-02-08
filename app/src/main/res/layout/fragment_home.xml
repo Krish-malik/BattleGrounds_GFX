@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gaming_gradient_background"
+    tools:context=".ui.home.HomeFragment">
+
+    <!-- Animated Background Overlay -->
+    <View
+        android:id="@+id/backgroundOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/circuit_pattern_overlay"
+        android:alpha="0.1" />
+
+    <!-- Main Content -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Gaming Header Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/headerCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                android:background="@drawable/gaming_card_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gaming_card_gradient"
+                    android:padding="20dp">
+
+                    <!-- Gaming Title with Neon Effect -->
+                    <TextView
+                        android:id="@+id/gamingTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⚡ GAMING STATION ⚡"
+                        android:textColor="#00FF88"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace"
+                        android:shadowColor="#00FF88"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="10"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <!-- Device Information -->
+                    <LinearLayout
+                        android:id="@+id/deviceInfoLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/gamingTitle"
+                        >
+
+                        <TextView
+                            android:id="@+id/deviceNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🎮 POCO X4 PRO 5G"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:fontFamily="monospace"
+                            android:shadowColor="#FF0080"
+                            android:shadowRadius="5" />
+
+                        <TextView
+                            android:id="@+id/processorTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🔥 Snapdragon 695+5G"
+                            android:textColor="#FFD700"
+                            android:layout_marginTop="8dp"
+                            android:textSize="16sp"
+                            android:fontFamily="monospace" />
+
+                        <TextView
+                            android:id="@+id/androidVersionTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🤖 Android 13 Gaming Ready"
+                            android:textColor="#00BFFF"
+                            android:layout_marginTop="4dp"
+                            android:textSize="16sp"
+                            android:fontFamily="monospace" />
+
+                        <!-- Gaming Mode Indicator -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/gaming_badge_background"
+                            android:padding="8dp">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/pulsing_dot"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="6dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="GAMING MODE ACTIVE"
+                                android:textColor="#00FF88"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:fontFamily="monospace" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Enhanced Device Image with Glow -->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Performance Dashboard Title -->
+            <TextView
+                android:id="@+id/performanceTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚔️ PERFORMANCE DASHBOARD ⚔️"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="monospace"
+                android:shadowColor="#FF0080"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="8"
+                app:layout_constraintTop_toBottomOf="@id/headerCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="24dp"
+                android:gravity="center" />
+
+            <!-- Enhanced Performance Indicators Grid -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/performanceCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                android:background="@drawable/performance_card_background"
+                app:layout_constraintTop_toBottomOf="@id/performanceTitleText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/performanceIndicatorsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4"
+                    android:background="@drawable/performance_gradient_background"
+                    android:padding="16dp">
+
+                    <!-- RAM -->
+                    <LinearLayout
+                        android:id="@+id/ramLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/performance_item_background"
+                        android:padding="8dp"
+                        android:layout_margin="2dp"
+                        android:minHeight="120dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🧠 RAM"
+                            android:textColor="#FFD700"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace"
+                            android:layout_marginBottom="6dp"
+                            android:gravity="center" />
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="6dp">
+
+                            <ProgressBar
+                                android:id="@+id/ramProgress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:progressDrawable="@drawable/gaming_circular_progress_ram"
+                                android:progress="78"
+                                android:max="100" />
+
+                            <TextView
+                                android:id="@+id/ramPercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="78%"
+                                android:gravity="center"
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:fontFamily="monospace"
+                                android:shadowColor="#FFD700"
+                                android:shadowRadius="3"
+                                android:layout_gravity="center"/>
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="OPTIMAL"
+                            android:textColor="#00FF88"
+                            android:textSize="9sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <!-- CPU -->
+                    <LinearLayout
+                        android:id="@+id/cpuLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/performance_item_background"
+                        android:padding="8dp"
+                        android:layout_margin="2dp"
+                        android:minHeight="120dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="⚡ CPU"
+                            android:textColor="#FF6B35"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace"
+                            android:layout_marginBottom="6dp"
+                            android:gravity="center" />
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="6dp">
+
+                            <ProgressBar
+                                android:id="@+id/cpuProgress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:progressDrawable="@drawable/gaming_circular_progress_cpu"
+                                android:progress="55"
+                                android:max="100" />
+
+                            <TextView
+                                android:id="@+id/cpuUsageText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="55%"
+                                android:gravity="center"
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:fontFamily="monospace"
+                                android:shadowColor="#FF6B35"
+                                android:shadowRadius="3"
+                                android:layout_gravity="center"/>
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="STABLE"
+                            android:textColor="#00FF88"
+                            android:textSize="9sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <!-- Storage -->
+                    <LinearLayout
+                        android:id="@+id/storageLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/performance_item_background"
+                        android:padding="8dp"
+                        android:layout_margin="2dp"
+                        android:minHeight="120dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💾 ROM"
+                            android:textColor="#9D4EDD"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace"
+                            android:layout_marginBottom="6dp"
+                            android:gravity="center" />
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="6dp">
+
+                            <ProgressBar
+                                android:id="@+id/storageProgress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:progressDrawable="@drawable/gaming_circular_progress_storage"
+                                android:progress="68"
+                                android:max="100" />
+
+                            <TextView
+                                android:id="@+id/storageUsageText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="68%"
+                                android:gravity="center"
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:fontFamily="monospace"
+                                android:shadowColor="#9D4EDD"
+                                android:shadowRadius="3"
+                                android:layout_gravity="center"/>
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="HEALTHY"
+                            android:textColor="#00FF88"
+                            android:textSize="9sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <!-- GPU -->
+                    <LinearLayout
+                        android:id="@+id/gpuLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/performance_item_background"
+                        android:padding="8dp"
+                        android:layout_margin="2dp"
+                        android:minHeight="120dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🎮 GPU"
+                            android:textColor="#00BFFF"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace"
+                            android:layout_marginBottom="6dp"
+                            android:gravity="center" />
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="6dp">
+
+                            <ProgressBar
+                                android:id="@+id/gpuProgress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:progressDrawable="@drawable/gaming_circular_progress_gpu"
+                                android:progress="74"
+                                android:max="100" />
+
+                            <TextView
+                                android:id="@+id/gpuUsageText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="74%"
+                                android:gravity="center"
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:fontFamily="monospace"
+                                android:shadowColor="#00BFFF"
+                                android:shadowRadius="3"
+                                android:layout_gravity="center"/>
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="BOOSTED"
+                            android:textColor="#00FF88"
+                            android:textSize="9sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- Gaming Stats Footer -->
+            <LinearLayout
+                android:id="@+id/gamingStatsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="16dp"
+                android:weightSum="3"
+                app:layout_constraintTop_toBottomOf="@id/performanceCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🔋 POWER\nEFFICIENT"
+                    android:textColor="#00FF88"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:background="@drawable/stat_background" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🌡️ TEMP\nCOOL"
+                    android:textColor="#00BFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/stat_background" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📶 SIGNAL\nSTRONG"
+                    android:textColor="#FFD700"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:background="@drawable/stat_background" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Gaming Banner Container with Neon Border -->
+    <FrameLayout
+        android:id="@+id/bannerContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/gaming_banner_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

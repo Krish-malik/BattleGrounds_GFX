@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/gaming_gradient_background"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="32dp">
+
+        <!-- Animated Header Section with Glow Effect -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/headerGlowCard"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="16dp"
+            app:cardBackgroundColor="#00ffff"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:translationZ="8dp">
+
+            <ImageView
+                android:id="@+id/headerIcon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_games"
+                android:scaleType="centerInside" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Gaming Style Title with Neon Effect -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GAME SELECTOR"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:textColor="#00ffff"
+            android:fontFamily="sans-serif-condensed"
+            android:letterSpacing="0.15"
+            android:shadowColor="#00ffff"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="12"
+            app:layout_constraintTop_toBottomOf="@id/headerGlowCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp" />
+
+        <!-- Glitch Effect Subtitle -->
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="▸ Choose Your Battle Arena ◂"
+            android:textSize="18sp"
+            android:textColor="#ff6600"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.08"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <!-- Main Game Display with RGB Border -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/mainGameCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginHorizontal="12dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="20dp"
+            app:cardBackgroundColor="#16213e"
+            app:layout_constraintTop_toBottomOf="@id/subtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="32dp">
+
+                <!-- Main Game Image Container -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imageContainer"
+                    android:layout_width="270dp"
+                    android:layout_height="270dp"
+                    app:cardCornerRadius="160dp"
+                    app:cardElevation="16dp"
+                    app:cardBackgroundColor="#2a2a3e"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <!-- Inner Gaming Frame -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="250dp"
+                        android:layout_height="240dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="140dp"
+                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="@android:color/transparent">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/mainGameImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:transitionName="gameImageTransition" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Gaming HUD Style Version Display -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/versionCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="12dp"
+                    app:cardBackgroundColor="#aa000000"
+                    app:layout_constraintTop_toBottomOf="@id/imageContainer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="28dp"
+                        android:paddingVertical="16dp">
+
+                        <TextView
+                            android:id="@+id/gameversion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SELECT TARGET"
+                            android:textSize="20sp"
+                            android:textColor="#00ff88"
+                            android:textStyle="bold"
+                            android:fontFamily="sans-serif-condensed"
+                            android:letterSpacing="0.1" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Gaming Stats/Level Indicator -->
+                <LinearLayout
+                    android:id="@+id/statsLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/versionCard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="#00ff88"
+                        android:layout_marginEnd="8dp" />
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="#00ff88"
+                        android:layout_marginEnd="8dp" />
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="#333333"
+                        android:layout_marginEnd="8dp" />
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="#333333" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Gaming Arsenal Section Title -->
+        <LinearLayout
+            android:id="@+id/sectionTitleLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="48dp"
+            app:layout_constraintTop_toBottomOf="@id/mainGameCard"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/sectionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GAMING ARSENAL"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#ff6600"
+                android:fontFamily="sans-serif-condensed"
+                android:letterSpacing="0.12" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:background="#ff6600"
+                android:layout_marginStart="16dp" />
+
+        </LinearLayout>
+
+        <!-- Enhanced Gaming Cards Carousel -->
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:clipToPadding="false"
+            android:paddingHorizontal="12dp"
+            android:overScrollMode="never"
+            app:layout_constraintTop_toBottomOf="@id/sectionTitleLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp">
+
+            <LinearLayout
+                android:id="@+id/imageSelectorLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="20dp">
+
+                <!-- BGMI Gaming Battle Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bgmiCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="12dp"
+                    app:cardBackgroundColor="#16213e"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <!-- Gaming Frame for Image -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/bgmiImageFrame"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            app:cardCornerRadius="70dp"
+                            app:cardElevation="8dp"
+                            app:cardBackgroundColor="#2a1a0e"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/bgmi"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/bgmi"
+                                android:scaleType="centerCrop" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Gaming Style Label with HUD Design -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="4dp"
+                            app:cardBackgroundColor="#ff6b35"
+                            app:layout_constraintTop_toBottomOf="@id/bgmiImageFrame"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <TextView
+                                android:id="@+id/bgmiLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BGMI"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/white"
+                                android:fontFamily="sans-serif-condensed"
+                                android:paddingHorizontal="20dp"
+                                android:paddingVertical="8dp"
+                                android:letterSpacing="0.1" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Gaming Status Indicator -->
+                        <View
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:background="#00ff88"
+                            app:layout_constraintTop_toTopOf="@id/bgmiImageFrame"
+                            app:layout_constraintEnd_toEndOf="@id/bgmiImageFrame"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- PUBG Global Gaming Battle Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pubgCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="12dp"
+                    app:cardBackgroundColor="#16213e"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/pubgImageFrame"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            app:cardCornerRadius="70dp"
+                            app:cardElevation="8dp"
+                            app:cardBackgroundColor="#0e1a2a"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/pubg"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/pubg"
+                                android:scaleType="centerCrop" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="4dp"
+                            app:cardBackgroundColor="#1e3c72"
+                            app:layout_constraintTop_toBottomOf="@id/pubgImageFrame"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <TextView
+                                android:id="@+id/pubgLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PUBG GLOBAL"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/white"
+                                android:fontFamily="sans-serif-condensed"
+                                android:paddingHorizontal="16dp"
+                                android:paddingVertical="8dp"
+                                android:letterSpacing="0.08" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <View
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:background="#00ff88"
+                            app:layout_constraintTop_toTopOf="@id/pubgImageFrame"
+                            app:layout_constraintEnd_toEndOf="@id/pubgImageFrame"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Korea Gaming Battle Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/koreaCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="12dp"
+                    app:cardBackgroundColor="#16213e"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/koreaImageFrame"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            app:cardCornerRadius="70dp"
+                            app:cardElevation="8dp"
+                            app:cardBackgroundColor="#2a0e1a"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/korea"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/korea"
+                                android:scaleType="centerCrop" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="4dp"
+                            app:cardBackgroundColor="#c31432"
+                            app:layout_constraintTop_toBottomOf="@id/koreaImageFrame"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <TextView
+                                android:id="@+id/koreaLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PUBG KOREA"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/white"
+                                android:fontFamily="sans-serif-condensed"
+                                android:paddingHorizontal="16dp"
+                                android:paddingVertical="8dp"
+                                android:letterSpacing="0.08" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <View
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:background="#00ff88"
+                            app:layout_constraintTop_toTopOf="@id/koreaImageFrame"
+                            app:layout_constraintEnd_toEndOf="@id/koreaImageFrame"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Taiwan Gaming Battle Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/taiwanCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="28dp"
+                    app:cardElevation="12dp"
+                    app:cardBackgroundColor="#16213e"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/taiwanImageFrame"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            app:cardCornerRadius="70dp"
+                            app:cardElevation="8dp"
+                            app:cardBackgroundColor="#0e2a1a"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/taiwan"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/taiwan"
+                                android:scaleType="centerCrop" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="4dp"
+                            app:cardBackgroundColor="#11998e"
+                            app:layout_constraintTop_toBottomOf="@id/taiwanImageFrame"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <TextView
+                                android:id="@+id/taiwanLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PUBG TAIWAN"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/white"
+                                android:fontFamily="sans-serif-condensed"
+                                android:paddingHorizontal="16dp"
+                                android:paddingVertical="8dp"
+                                android:letterSpacing="0.08" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <View
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:background="#00ff88"
+                            app:layout_constraintTop_toTopOf="@id/taiwanImageFrame"
+                            app:layout_constraintEnd_toEndOf="@id/taiwanImageFrame"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/continueButtonCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginHorizontal="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="16dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:layout_constraintTop_toBottomOf="@id/horizontalScrollView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- RGB Border Animation -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rgb_gradient_border" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/continueButton"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_margin="4dp"
+                android:text="    ▸ENTER BATTLEFIELD ◂"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:letterSpacing="0.12"
+                app:cornerRadius="18dp"
+                app:backgroundTint="#1a1a2e"
+                app:rippleColor="#00BCD4"
+                app:strokeColor="@color/neon_accent"
+                app:strokeWidth="2dp"
+                app:iconGravity="textStart"
+                app:iconSize="24dp"
+                app:iconTint="#00BCD4" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

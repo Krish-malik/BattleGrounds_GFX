@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/gaming_background"
+    tools:context=".ui.notifications.NotificationsFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center_horizontal"
+            android:clipToPadding="false">
+
+                <!-- Gaming Header with Neon Effect -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚡ GAME CONTROL CENTER ⚡"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#00FFFF"
+                    android:shadowColor="#0099CC"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="10"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="monospace" />
+
+                <!-- ⭐ BUY PREMIUM VERSION - Gaming Style -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_premium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="15dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="85dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:background="@drawable/premium_gradient"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp">
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/ic_premium"
+                                    android:layout_marginEnd="16dp"
+                                    android:contentDescription="Premium Gaming Icon"
+                                    android:scaleType="centerInside" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="🔥 UNLOCK PREMIUM 🔥"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold"
+                                            android:textColor="@android:color/white"
+                                            android:shadowColor="#000000"
+                                            android:shadowRadius="3" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Access All Features"
+                                            android:textSize="12sp"
+                                            android:textColor="#FFE0B2"
+                                            android:layout_marginTop="2dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="⚡"
+                                    android:textSize="28sp"
+                                    android:textColor="#FFFF00"
+                                    android:layout_marginStart="8dp" />
+                        </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- GRANT PERMISSION - Cyber Style -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_permission"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="12dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="75dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:background="@drawable/cyber_gradient">
+
+                                <ImageView
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    android:src="@drawable/ic_permission"
+                                    android:layout_marginEnd="16dp"
+                                    android:contentDescription="Shield Gaming Icon"
+                                    />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="🛡️ GRANT ACCESS"
+                                            android:textColor="@android:color/white"
+                                            android:textStyle="bold"
+                                            android:textSize="16sp"
+                                            android:shadowColor="#000000"
+                                            android:shadowRadius="2" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Enable Shizuku Power"
+                                            android:textColor="#B3E5FC"
+                                            android:textSize="12sp"
+                                            android:layout_marginTop="2dp" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="4dp"
+                                    android:layout_height="40dp"
+                                    android:background="#00FFFF"
+                                    android:layout_marginStart="8dp" />
+                        </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- TELEGRAM - Social Gaming -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_telegram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="12dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="75dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:background="@drawable/telegram_gradient">
+
+                                <ImageView
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    android:src="@drawable/ic_telegram"
+                                    android:layout_marginEnd="16dp"
+                                    android:contentDescription="Telegram Gaming Icon" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="💬 JOIN SQUAD"
+                                            android:textColor="@android:color/white"
+                                            android:textStyle="bold"
+                                            android:textSize="16sp"
+                                            android:shadowColor="#000000"
+                                            android:shadowRadius="2" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Connect with Gamers"
+                                            android:textColor="#E1F5FE"
+                                            android:textSize="12sp"
+                                            android:layout_marginTop="2dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="🎮"
+                                    android:textSize="24sp"
+                                    android:layout_marginStart="8dp" />
+                        </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- YOUTUBE - Streaming Style -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_youtube"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="12dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="75dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:background="@drawable/youtube_gradient">
+
+                                <ImageView
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    android:src="@drawable/ic_youtube"
+                                    android:layout_marginEnd="16dp"
+                                    android:contentDescription="YouTube Gaming Icon" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="📺 WATCH STREAM"
+                                            android:textColor="@android:color/white"
+                                            android:textStyle="bold"
+                                            android:textSize="16sp"
+                                            android:shadowColor="#000000"
+                                            android:shadowRadius="2" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Gaming Content And Tips"
+                                            android:textColor="#FFCDD2"
+                                            android:textSize="12sp"
+                                            android:layout_marginTop="2dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="🔴"
+                                    android:textSize="20sp"
+                                    android:layout_marginStart="8dp" />
+                        </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- PRIVACY POLICY - Security Theme -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_privacy_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="12dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:stateListAnimator="@animator/card_lift">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="75dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:background="@drawable/privacy_gradient">
+
+                                <ImageView
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    android:src="@drawable/ic_privacy"
+                                    android:layout_marginEnd="16dp"
+                                    android:contentDescription="Privacy Gaming Icon"
+                                     />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="🔒 PRIVACY SHIELD"
+                                            android:textColor="@android:color/white"
+                                            android:textStyle="bold"
+                                            android:textSize="16sp"
+                                            android:shadowColor="#000000"
+                                            android:shadowRadius="2" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Data Protection Info"
+                                            android:textColor="#E1BEE7"
+                                            android:textSize="12sp"
+                                            android:layout_marginTop="2dp" />
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="3dp"
+                                    android:layout_height="40dp"
+                                    android:background="#9C27B0"
+                                    android:layout_marginStart="8dp" />
+                        </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- FEEDBACK - Achievement Style -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="12dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:stateListAnimator="@animator/card_lift">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="75dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:background="@drawable/feedback_gradient">
+
+                                <ImageView
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"
+                                    android:src="@drawable/ic_feedback"
+                                    android:layout_marginEnd="16dp"
+                                    android:contentDescription="Feedback Gaming Icon"
+                                    />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="💬 SEND FEEDBACK"
+                                            android:textColor="@android:color/white"
+                                            android:textStyle="bold"
+                                            android:textSize="16sp"
+                                            android:shadowColor="#000000"
+                                            android:shadowRadius="2" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Help Us Level Up!"
+                                            android:textColor="#B2DFDB"
+                                            android:textSize="12sp"
+                                            android:layout_marginTop="2dp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="⭐"
+                                    android:textSize="24sp"
+                                    android:layout_marginStart="8dp" />
+                        </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Gaming Footer -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ready Player One? 🎯"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="monospace" />
+
+        </LinearLayout>
+</ScrollView>

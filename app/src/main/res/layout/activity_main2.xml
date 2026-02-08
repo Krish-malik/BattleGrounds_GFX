@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_gaming_background"
+    tools:context=".MainActivity2">
+
+    <!-- Animated Gaming Background Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_overlay"
+        android:alpha="0.8" />
+
+    <!-- Enhanced Toolbar with Gaming Style -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp">
+
+            <!-- Enhanced Game Name with Neon Effect -->
+            <TextView
+                android:id="@+id/game_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BGMI 2.6"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:textColor="#00FFFF"
+                android:shadowColor="#0066CC"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="15"
+                android:letterSpacing="0.1" />
+
+            <!-- Gaming Badge/Subtitle -->
+            <TextView
+                android:id="@+id/game_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PERFORMANCE OPTIMIZER"
+                android:layout_below="@id/game_name_text"
+                android:layout_centerHorizontal="true"
+                android:textSize="14sp"
+                android:textColor="#FFD700"
+                android:textStyle="bold"
+                android:letterSpacing="0.2"
+                android:layout_marginTop="5dp" />
+
+            <!-- Enhanced Game Image with Glow Effect -->
+            <RelativeLayout
+                android:id="@+id/image_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/game_subtitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp">
+
+                <!-- Outer glow ring -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/glow_ring"
+                    app:civ_border_width="3dp"
+                    app:civ_border_color="#00FFFF" />
+
+                <!-- Main game image -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/mainGameImage"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bgmi"
+                    app:civ_border_width="4dp"
+                    app:civ_border_color="#FFD700"
+                    android:elevation="6dp" />
+
+                <!-- Pulse animation overlay -->
+                <View
+                    android:id="@+id/pulse_overlay"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/pulse_circle"
+                    android:alpha="0.3" />
+            </RelativeLayout>
+
+            <!-- Enhanced FPS Unlock Sections -->
+
+            <!-- 60 FPS Section -->
+            <LinearLayout
+                android:id="@+id/fps_60_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_container"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/fps_card_background"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:elevation="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚡ PERFORMANCE MODE"
+                    android:textColor="#FFD700"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp" />
+
+                <com.ncorti.slidetoact.SlideToActView
+                    android:id="@+id/swipe_60fps"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:text_size="22dp"
+                    app:outer_color="#1a237e"
+                    app:inner_color="#00FFFF"
+                    app:text_style="bold"
+                    app:text="🚀 UNLOCK 60 FPS"
+                    app:text_color="#FFFFFF"
+                    app:border_radius="30dp"
+                    app:slider_height="55dp" />
+            </LinearLayout>
+
+            <!-- 90 FPS Section -->
+            <LinearLayout
+                android:id="@+id/fps_90_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fps_60_container"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/fps_card_background"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:elevation="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔥 HIGH PERFORMANCE"
+                    android:textColor="#FF6B35"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp" />
+
+                <com.ncorti.slidetoact.SlideToActView
+                    android:id="@+id/swipe_90fps"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:text_size="22dp"
+                    app:outer_color="#d32f2f"
+                    app:inner_color="#FF6B35"
+                    app:text_style="bold"
+                    app:text="🔥 UNLOCK 90 FPS"
+                    app:text_color="#FFFFFF"
+                    app:border_radius="30dp"
+                    app:slider_height="55dp" />
+            </LinearLayout>
+
+            <!-- 120 FPS Section -->
+            <LinearLayout
+                android:id="@+id/fps_120_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fps_90_container"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/fps_card_background"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:elevation="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💎 ULTRA PERFORMANCE"
+                    android:textColor="#9C27B0"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp" />
+
+                <com.ncorti.slidetoact.SlideToActView
+                    android:id="@+id/swipe_120fps"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:text_size="22dp"
+                    app:outer_color="#6a1b9a"
+                    app:inner_color="#9C27B0"
+                    app:text_style="bold"
+                    app:text="💎 UNLOCK 120 FPS"
+                    app:text_color="#FFFFFF"
+                    app:border_radius="30dp"
+                    app:slider_height="55dp" />
+            </LinearLayout>
+
+            <!-- Enhanced Action Buttons Container -->
+            <LinearLayout
+                android:id="@+id/buttons_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fps_120_container"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Enhanced RESET Button -->
+                <Button
+                    android:id="@+id/reset"
+                    android:layout_width="200dp"
+                    android:layout_height="65dp"
+                    android:text="🔄 RESET"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:background="@drawable/reset_button_bg"
+                    android:elevation="8dp"
+                    android:stateListAnimator="@animator/button_press_animation"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Enhanced CUSTOMIZED UPLOAD Button -->
+                <Button
+                    android:id="@+id/customized_upload"
+                    android:layout_width="280dp"
+                    android:layout_height="65dp"
+                    android:text="⚙️ CUSTOMIZED UPLOAD"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="@drawable/upload_button_bg"
+                    android:elevation="8dp"
+                    android:stateListAnimator="@animator/button_press_animation" />
+            </LinearLayout>
+
+            <!-- Gaming Stats Footer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttons_container"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚡ OPTIMIZED FOR BATTLEGROUNDS ⚡"
+                    android:textColor="#FFD700"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
