@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎮 BattleGrounds GFX Tool
 
 <div align="center">
@@ -272,3 +273,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 *If you find this useful, please ⭐ the repository!*
 
 </div>
+=======
+# BattleGrounds_GFX
+BattleGrounds GFX Tool is a performance optimization app for games like PUBG Mobile, BGMI, and other battleground titles. It unlocks higher FPS options, optimizes graphics settings, reduces lag, and improves smoothness based on your device without changing core gameplay. Perfect for stable, competitive play.
+>>>>>>> 9b3ffa7475d18554f3aef99a3840c05ca293ad2d
